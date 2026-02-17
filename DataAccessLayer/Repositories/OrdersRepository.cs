@@ -16,10 +16,15 @@ public class OrdersRepository : IOrdersRepository
     _orders = mongoDatabase.GetCollection<Order>(collectionName);
   }
 
-
   public async Task<Order?> AddOrder(Order order)
   {
     order.OrderID = Guid.NewGuid();
+    order._id = order.OrderID;
+
+    foreach (OrderItem orderItem in order.OrderItems)
+    {
+      orderItem._id = Guid.NewGuid();
+    }
 
     await _orders.InsertOneAsync(order);
     return order;
@@ -70,6 +75,7 @@ public class OrdersRepository : IOrdersRepository
     {
       return null;
     }
+    order._id = existingOrder._id;
 
     ReplaceOneResult replaceOneResult = await _orders.ReplaceOneAsync(filter, order);
 
