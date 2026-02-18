@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using eCommerce.OrdersMicroservice.BusinessLogicLayer.HttpClients;
 using eShop.OrdersMicroservice.BusinessLogicLayer.DTO;
 using eShop.OrdersMicroservice.BusinessLogicLayer.ServiceContracts;
 using eShop.OrdersMicroservice.DataAccessLayer.Entities;
@@ -15,8 +16,9 @@ public class OrdersService(
   IValidator<OrderAddRequest> orderAddRequestValidator,
   IValidator<OrderItemAddRequest> orderItemAddRequestValidator,
   IValidator<OrderUpdateRequest> orderUpdateRequestValidator,
-  IValidator<OrderItemUpdateRequest> orderItemUpdateRequestValidator) : IOrdersService
-{
+  IValidator<OrderItemUpdateRequest> orderItemUpdateRequestValidator,
+  UsersMicroserviceClient _usersMicroserviceClient) : IOrdersService
+  {
   public async Task<OrderResponse?> AddOrder(OrderAddRequest orderAddRequest)
   {
     //Check for null parameter
@@ -47,7 +49,7 @@ public class OrdersService(
     }
 
     //TO DO: Add logic for checking if UserID exists in Users microservice
-
+    UserDTO? user = await _usersMicroserviceClient.GetUserByUserID(orderAddRequest.UserID) ?? throw new ArgumentException("Invalid User ID");
 
     //Convert data from OrderAddRequest to Order
     Order orderInput = mapper.Map<Order>(orderAddRequest); //Map OrderAddRequest to 'Order' type (it invokes OrderAddRequestToOrderMappingProfile class)
@@ -105,6 +107,7 @@ public class OrdersService(
     }
 
     //TO DO: Add logic for checking if UserID exists in Users microservice
+    UserDTO? user = await _usersMicroserviceClient.GetUserByUserID(orderUpdateRequest.UserID) ?? throw new ArgumentException("Invalid User ID");
 
 
     //Convert data from OrderUpdateRequest to Order
