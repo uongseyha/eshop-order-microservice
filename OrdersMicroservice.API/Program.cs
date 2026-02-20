@@ -1,8 +1,7 @@
-using eCommerce.OrdersMicroservice.BusinessLogicLayer.HttpClients;
+using eShop.OrdersMicroservice.BusinessLogicLayer.HttpClients;
 using eShop.OrderMicroservice.BusinessLogicLayer;
 using eShop.OrderMicroservice.DataAccessLayer;
 using eShop.OrdersMicroservice.API.Middleware;
-using eShop.OrdersMicroservice.BusinessLogicLayer.HttpClients;
 using eShop.OrdersMicroservice.BusinessLogicLayer.Policies;
 using FluentValidation.AspNetCore;
 using Polly;

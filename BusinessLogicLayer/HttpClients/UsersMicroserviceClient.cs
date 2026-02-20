@@ -6,7 +6,7 @@ using Polly.Timeout;
 using System.Net.Http.Json;
 using System.Text.Json;
 
-namespace eCommerce.OrdersMicroservice.BusinessLogicLayer.HttpClients;
+namespace eShop.OrdersMicroservice.BusinessLogicLayer.HttpClients;
 
 public class UsersMicroserviceClient(
   HttpClient _httpClient
@@ -28,7 +28,7 @@ public class UsersMicroserviceClient(
         return userFromCache;
       }
 
-      HttpResponseMessage response = await _httpClient.GetAsync($"/api/users/{userID}");
+      HttpResponseMessage response = await _httpClient.GetAsync($"/gateway/Users/{userID}");
 
       if (!response.IsSuccessStatusCode)
       {

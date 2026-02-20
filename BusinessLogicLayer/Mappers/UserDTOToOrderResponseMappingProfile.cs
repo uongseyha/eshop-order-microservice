@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using eShop.OrdersMicroservice.BusinessLogicLayer.DTO;
 
-namespace eCommerce.OrdersMicroservice.BusinessLogicLayer.Mappers;
+namespace eShop.OrdersMicroservice.BusinessLogicLayer.Mappers;
 
 public class UserDTOToOrderResponseMappingProfile : Profile
 {

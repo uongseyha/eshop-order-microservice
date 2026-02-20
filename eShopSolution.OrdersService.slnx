@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="ApiGateway/ApiGateway.csproj" Id="28fe4afb-ad9f-47fe-a6da-f9806bcd7230" />
   <Project Path="BusinessLogicLayer/BusinessLogicLayer.csproj" Id="c575460c-43e7-445d-96ab-c066baa3d30b" />
   <Project Path="DataAccessLayer/DataAccessLayer.csproj" Id="feee21a3-ed5d-476e-bd2d-0853a3a12cf1" />
   <Project Path="docker-compose.dcproj">

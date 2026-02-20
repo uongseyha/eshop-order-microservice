@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
-using eCommerce.OrdersMicroservice.BusinessLogicLayer.HttpClients;
-using eShop.OrdersMicroservice.BusinessLogicLayer.DTO;
 using eShop.OrdersMicroservice.BusinessLogicLayer.HttpClients;
+using eShop.OrdersMicroservice.BusinessLogicLayer.DTO;
 using eShop.OrdersMicroservice.BusinessLogicLayer.ServiceContracts;
 using eShop.OrdersMicroservice.DataAccessLayer.Entities;
 using eShop.OrdersMicroservice.DataAccessLayer.RepositoryContracts;
