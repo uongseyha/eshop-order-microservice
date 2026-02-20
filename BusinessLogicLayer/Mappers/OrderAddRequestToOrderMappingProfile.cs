@@ -2,7 +2,7 @@
 using eShop.OrdersMicroservice.BusinessLogicLayer.DTO;
 using eShop.OrdersMicroservice.DataAccessLayer.Entities;
 
-namespace eShop.ordersMicroservice.BusinessLogicLayer.Mappers;
+namespace eShop.OrdersMicroservice.BusinessLogicLayer.Mappers;
 
 public class OrderAddRequestToOrderMappingProfile : Profile
 {

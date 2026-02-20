@@ -135,16 +135,16 @@
       },
 
       "RateLimitOptions": {
-        "Limit": 3,
-        "Period": "1m",
-        "HttpStatusCode": 429,
-        "EnableRateLimiting": true,
-        "PeriodTimespan": 30,
-        "ClientWhitelist": [
-          "Client1",
-          "Client2"
-        ],
-        "ClientIdHeader": "Client-Id"
+        //"Limit": 5,
+        //"Period": "1m",
+        //"HttpStatusCode": 429,
+        //"EnableRateLimiting": true,
+        //"PeriodTimespan": 30
+        //"ClientWhitelist": [
+        //  "Client1",
+        //  "Client2"
+        //],
+        //"ClientIdHeader": "Client-Id"
       }
     },
 
